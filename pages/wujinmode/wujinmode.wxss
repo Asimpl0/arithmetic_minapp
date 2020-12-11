@@ -1,0 +1,54 @@
+/* pages/wujinmode/wujinmode.wxss */
+.wujin{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.text1{
+  font-size: 60rpx;
+  font-weight: 400rpx;
+  margin-top: 120rpx;
+  margin-left: 100rpx;
+}
+
+.text2{
+  font-size: 40rpx;
+  font-weight: 200rpx;
+  margin-top: 0rpx;
+  margin-left: 100rpx;
+}
+
+.text3{
+  font-size: 45rpx;
+  font-weight: 700rpx;
+  margin-top: 0rpx;
+  margin-left: 100rpx;
+}
+
+.text4{
+  font-size: 40rpx;
+  font-weight: 400rpx;
+  margin-top: 0rpx;
+  margin-left: 100rpx;
+}
+
+.tap{
+  font-size: 45rpx;
+  font-weight: 900rpx;
+  margin-top: 20rpx;
+  margin-left: 0rpx;
+  color: red;
+}
+
+
+.begin{
+  margin-left: 100rpx;
+  
+}
+
+.image{
+  width: 450rpx;
+  margin-top: 25rpx;
+  margin-left: 100rpx;
+}

@@ -1,0 +1,93 @@
+/**index.wxss**/
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 105rpx;
+  height: 105rpx;
+  margin-top: 40rpx;
+  margin-left: 120rpx;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 25rpx;
+  margin-top: 65rpx;
+  margin-left: 40rpx;
+  font-weight: 400;
+  color: #000;
+}
+
+.hello {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.nickname{
+  
+  line-height: 25rpx;
+}
+.words{
+  margin-top: 20rpx;
+  margin-left: 60rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+.firstblock{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  
+}
+
+.firstleft{
+  margin-top: 45rpx;
+  margin-left: 50rpx;
+  width: 300rpx;
+
+}
+
+.firstright{
+  margin-top: 45rpx;
+  margin-left: 20rpx;
+  width: 300rpx;
+
+}
+
+.second{
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+  width: 720rpx;
+}
+
+swiper{
+  margin-top: 15rpx;
+  margin-left: 55rpx;
+  width: 620rpx;
+ 
+}
+
+.image1{
+  width:  620rpx;
+  border-radius: 20rpx;
+}
+
+.image2{
+  width:  620rpx;
+  border-radius: 20rpx;
+}
+
+.image3{
+  width:  620rpx;
+  border-radius: 20rpx;
+}

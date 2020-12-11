@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/wujinmode/wujinmode",
+    "pages/search/search",
+    "pages/about/about",
+    "pages/jichumode/jichumode",
+    "pages/qianghuamode/qianghuamode",
+    "pages/wujinanswer/wujinanswer",
+    "pages/onegradeanswer/onegradeanswer",
+    "pages/twogradeanswer/twogradeanswer",
+    "pages/threegradeanswer/threegradeanswer"
+
+  ],
+  "window":{
+    
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "恐龙口算",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页",
+      "iconPath": "/icon/index.png",
+      "selectedIconPath": "/icon/index.png"
+    },
+    {
+    "pagePath": "pages/search/search",
+    "text": "提示",
+    "iconPath": "/icon/search.png",
+    "selectedIconPath": "/icon/search.png"
+    },
+    {
+      "pagePath":"pages/about/about",
+      "text": "关于",
+      "iconPath": "/icon/about.png",
+      "selectedIconPath": "/icon/about.png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

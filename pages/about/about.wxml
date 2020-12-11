@@ -1,0 +1,57 @@
+<!--pages/about/about.wxml-->
+<view class="about">
+<view class="logo">
+  <!--
+    logo
+  -->
+  <image class="logoimage" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/cfzIhRjwSEvPgAr.png" />
+</view>
+<view class="abouttxt">
+  <!--
+    使用指南
+  -->
+  <navigator class="direct"  hover-class="none" url="https://gitee.com/simon_an/arithmetic_minapp">
+    <text class="directdetail">使用指南    </text>
+    <text class="iconfont icon-zhinan"></text>
+  </navigator>
+  <!--
+    分割线
+  -->
+  <view class="string1"></view>
+ 
+
+  <navigator class="gitee"  hover-class="none" url="https://gitee.com/simon_an/arithmetic_minapp">
+    <text class="giteetxt">项目开源地址   </text>
+    <text class="iconfont icon-gitee-fill-round"></text>
+  </navigator>
+  <view class="string3"></view>
+<!--
+    联系我们
+  --> 
+  <button class="contact"  hover-class="none" open-type="contact" style="width:100%">
+    <text class="contacttxt">有问题，联系我们   </text>
+    <text class="iconfont icon-weixin"></text>
+  </button>
+    <!--
+    分割线
+  -->
+  <view class="string2"></view>
+  <!--
+    联系我们
+  --> 
+  <button class="share"  hover-class="none" open-type="share" style="width:100%">
+    <text class="sharetxt">分享给好友   </text>
+    <text class="iconfont icon-fenxiang"></text>
+  </button>
+      <!--
+    分割线
+  -->
+  <view class="string4"></view>
+  
+  <navigator class="aboutus"  hover-class="none" url="https://gitee.com/simon_an/arithmetic_minapp">
+    <text class="aboutustxt">关于    </text>
+    <text class="iconfont icon-ziyuan163"></text>
+  </navigator>
+
+</view>
+</view>

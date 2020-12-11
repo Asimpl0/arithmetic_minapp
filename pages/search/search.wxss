@@ -1,0 +1,15 @@
+/* pages/search/search.wxss */
+.add{
+  margin-top: 50rpx;
+  margin-left: 60rpx;
+}
+
+.multi{
+  margin-top: 30rpx;
+  margin-left: 60rpx;
+}
+
+.more{
+  margin-top: 20rpx;
+  margin-left: 64rpx;
+}

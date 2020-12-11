@@ -1,0 +1,48 @@
+<!--index.wxml-->
+
+
+
+<view class="page">
+<view class="user">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+<view class="words">
+  <text class="nickname">
+  <text class="name">
+ 你好呀， {{userInfo.nickName}}~
+</text>
+<text class="hello">
+好好学习，天天向上哦
+</text>
+</text>
+</view>
+    </block>
+
+</view>
+<view class="main">
+  <view class="firstblock">
+    <navigator hover-class="none" url= "/pages/jichumode/jichumode">
+      <image class="firstleft" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/10/nWPMQ3NEmaYBzo7.png"/>
+    </navigator>
+    <navigator hover-class="none" url= "/pages/qianghuamode/qianghuamode">
+      <image class="firstright" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/G5SvK9sVEPyZo24.png"/>
+    </navigator>
+  
+  </view>
+  <view class="secondblock">
+    <navigator hover-class="none" url= "/pages/wujinmode/wujinmode">
+      <image class="second" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/IjrawGglsQVFTu4.png"/>
+    </navigator>
+  </view>
+  <view class="more">
+    <swiper autoplay interval="1500" circular >
+      <swiper-item><image class="image1" mode="widthFix" src="https://i.loli.net/2020/12/11/SCdqZzmvupb8yLQ.png" /></swiper-item>
+      <swiper-item><image class="image2" mode="widthFix" src="https://i.loli.net/2020/12/11/Yxqv3lfVTyw94eZ.png" /></swiper-item>
+      <swiper-item><image class="image3" mode="widthFix" src="https://i.loli.net/2020/12/11/G32AphZK8WxXMac.png"/></swiper-item>
+</swiper>
+  </view>
+</view>
+</view>
+
+

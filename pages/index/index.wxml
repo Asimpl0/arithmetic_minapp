@@ -35,6 +35,11 @@
       <image class="second" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/IjrawGglsQVFTu4.png"/>
     </navigator>
   </view>
+  <view class="register">
+    <navigator hover-class="none" url= "/pages/sign/sign">
+      <image class="register_image" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/U7TZFvXngtGmBaV.png"/>
+     </navigator>
+  </view>
   <view class="more">
     <swiper autoplay interval="1500" circular >
       <swiper-item><image class="image1" mode="widthFix" src="https://i.loli.net/2020/12/11/SCdqZzmvupb8yLQ.png" /></swiper-item>

@@ -1,7 +1,7 @@
 /* pages/about/about.wxss */
 .logoimage{
-  margin-top: 60rpx;
-  margin-left: 80rpx;
+  margin-top: 200rpx;
+  margin-left:80rpx;
   width: 600rpx;
   align-items: center;
 }
@@ -15,8 +15,8 @@
 }
 
 .abouttxt{
- 
-  margin-top: 200rpx;
+  margin-left: 50rpx;
+  margin-top: 60rpx;
 }
 
 .string1{

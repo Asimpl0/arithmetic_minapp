@@ -1,9 +1,12 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/sign/sign",
+    
     "pages/wujinmode/wujinmode",
     "pages/search/search",
     "pages/about/about",
+    
     "pages/jichumode/jichumode",
     "pages/qianghuamode/qianghuamode",
     "pages/wujinanswer/wujinanswer",

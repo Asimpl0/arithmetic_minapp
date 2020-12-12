@@ -8,7 +8,7 @@
 .avatar {
   width: 105rpx;
   height: 105rpx;
-  margin-top: 40rpx;
+  margin-top: 20rpx;
   margin-left: 120rpx;
   border-radius: 50%;
 }
@@ -51,21 +51,21 @@
 }
 
 .firstleft{
-  margin-top: 45rpx;
+  margin-top: 35rpx;
   margin-left: 50rpx;
   width: 300rpx;
 
 }
 
 .firstright{
-  margin-top: 45rpx;
+  margin-top: 35rpx;
   margin-left: 20rpx;
   width: 300rpx;
 
 }
 
 .second{
-  margin-top: 15rpx;
+  margin-top: 0rpx;
   margin-left: 30rpx;
   width: 720rpx;
 }
@@ -90,4 +90,9 @@ swiper{
 .image3{
   width:  620rpx;
   border-radius: 20rpx;
+}
+
+.register_image{
+  width:  620rpx;
+  margin-left: 52rpx;
 }

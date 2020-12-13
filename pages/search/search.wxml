@@ -1,7 +1,7 @@
 <!--pages/search/search.wxml-->
 <view class="search">
-  <image class="add" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/WxTIUPDAKXgZisc.png"/>
-  <image class="multi" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/y8XZq1aUWLEkdnN.png"/>
-  <image class="more" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/TiVA7eF1Sj4s6co.png"/>
+  <image class="add" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/12/CwfUNZdhbqeTrHl.png"/>
+  <image class="multi" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/12/KoLI4DVWOugvXR5.png"/>
+  <image class="more" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/12/DHr3UMzjxa8BIsb.png"/>
   
 </view>

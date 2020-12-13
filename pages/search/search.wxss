@@ -1,15 +1,15 @@
 /* pages/search/search.wxss */
 .add{
-  margin-top: 50rpx;
-  margin-left: 60rpx;
+  margin-top: 200rpx;
+  margin-left: 70rpx;
 }
 
 .multi{
   margin-top: 30rpx;
-  margin-left: 60rpx;
+  margin-left: 70rpx;
 }
 
 .more{
   margin-top: 20rpx;
-  margin-left: 64rpx;
+  margin-left: 74rpx;
 }

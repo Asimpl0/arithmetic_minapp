@@ -25,5 +25,5 @@
   width: 700rpx;
   height: 700rpx;
   margin-top: 70rpx;
-  padding-left: 5%;
+  padding-left: 4%;
 }

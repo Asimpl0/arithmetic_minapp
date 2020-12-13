@@ -7,15 +7,42 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    total:0,//总天数
+    sign:false,//是否可以签到
+    month:0,
+    year:0,
+    day:0,
+    lastmonth:0,
+    lastday:0
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+  
   onLoad: function () {
+    this.data.tatal= wx.getStorageSync('total');
+    this.data.sign=wx.getStorageSync('sign');
+    this.data.lastmonth=wx.getStorageSync('month');
+    this.data.lastday=wx.getStorageSync('day');
+    this.data.hasUserInfo=wx.getStorageSync('hasinfo');
+    this.data.userInfo=wx.getStorageSync('info');
+    this.setData({
+      total:this.data.tatal,
+      sign:this.data.sign,
+      lastmonth:this.data.lastmonth,
+      lastday:this.data.lastday,
+      hasUserInfo: this.data.hasUserInfo,
+      userInfo:this.data.userInfo
+    })
+    this.datetime();
+    console.log(this.data.month);
+    console.log(this.data.day);
+    console.log(this.data.lastmonth);
+    console.log(this.data.lastday);
+   
+    if(parseInt(this.data.day)!=parseInt(this.data.lastday)||parseInt(this.data.month)!=parseInt(this.data.lastmonth)){
+      this.setData({
+          sign:false
+      });
+      console.log(this.data.sign);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -41,8 +68,8 @@ Page({
           })
         }
       })
-    }
-  },
+    }}},
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -50,5 +77,36 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    wx.setStorageSync('info', this.data.userInfo);
+    wx.setStorageSync('hasinfo', this.data.hasUserInfo);
+  },
+
+  handlesign: function(e){
+    this.setData({
+      sign:true,
+      total:Number(Number(this.data.total) + 1),
+  })
+  wx.setStorageSync('total', this.data.total);
+  wx.setStorageSync('sign', this.data.sign);
+  },
+
+  datetime:function(){
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    var months = date.getMonth() + 1;
+  
+    //获取现今年份
+    this.data.year = year;
+  
+    //获取现今月份
+    this.data.month = months;
+  
+    //获取今日日期
+    this.data.day = date.getDate();
+    
+    wx.setStorageSync('month', this.data.month);
+    wx.setStorageSync('day', this.data.day);
   }
+
 })

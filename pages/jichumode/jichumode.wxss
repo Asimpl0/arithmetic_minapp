@@ -1,1 +1,29 @@
 /* pages/jichumode/jichumode.wxss */
+
+.firstpng{
+  width: 415rpx;
+  height: 700rpx;
+  margin-top: 60rpx;
+  padding-left: 24%;
+}
+
+.secondpng{
+  width: 415rpx;
+  height: 700rpx;
+  margin-top: 60rpx;
+  padding-left: 24%;
+}
+
+.thirdpng{
+  width: 415rpx;
+  height: 700rpx;
+  margin-top: 60rpx;
+  padding-left: 24%;
+}
+
+.fourthpng{
+  width: 700rpx;
+  height: 700rpx;
+  margin-top: 70rpx;
+  padding-left: 5%;
+}

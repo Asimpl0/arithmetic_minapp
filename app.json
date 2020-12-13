@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/sign/sign",
     
     "pages/wujinmode/wujinmode",
     "pages/search/search",

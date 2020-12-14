@@ -11,7 +11,8 @@
     "pages/wujinanswer/wujinanswer",
     "pages/onegradeanswer/onegradeanswer",
     "pages/twogradeanswer/twogradeanswer",
-    "pages/threegradeanswer/threegradeanswer"
+    "pages/threegradeanswer/threegradeanswer",
+    "pages/calculate/calculate"
 
   ],
   "window":{

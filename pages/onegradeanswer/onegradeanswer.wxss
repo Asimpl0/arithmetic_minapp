@@ -1,1 +1,18 @@
 /* pages/onegradeanswer/onegradeanswer.wxss */
+.firstpng{
+  width: 500rpx;
+  margin-top: 150rpx;
+  padding-left: 20%;
+}
+
+.secondpng{
+  width: 500rpx;
+  margin-top: 150rpx;
+  padding-left: 20%;
+}
+
+.thirdpng{
+  width: 500rpx;
+  margin-top: 150rpx;
+  padding-left: 20%;
+}

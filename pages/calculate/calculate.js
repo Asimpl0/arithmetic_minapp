@@ -963,63 +963,63 @@ Suan7: function (num1, sign1, num2) {
       this.generateEquation3();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 4){
       this.generateEquation4();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 5) {
       this.generateEquation5();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 6) {
       this.generateEquation6();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 7) {
       this.generateEquation7();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 8) {
       this.generateEquation8();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 9) {
       this.generateEquation9();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 10) {
       this.generateEquation10();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
     else if (this.data.modechoice == 11) {
       this.generateEquation11();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation: this.data.equa
+        equation: this.data.equation
       })
     }
   }

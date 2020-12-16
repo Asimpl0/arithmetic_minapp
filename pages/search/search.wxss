@@ -7,18 +7,26 @@
   position: absolute;
   left: 0;
   top: 0;
+  
 }
+
+.search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .add{
   margin-top: 200rpx;
-  margin-left: 70rpx;
+  /* margin-left: 70rpx; */
 }
 
 .multi{
   margin-top: 30rpx;
-  margin-left: 70rpx;
+  /* margin-left: 70rpx; */
 }
 
 .more{
   margin-top: 20rpx;
-  margin-left: 74rpx;
+  /* margin-left: 74rpx; */
 }

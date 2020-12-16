@@ -1,4 +1,5 @@
 // pages/onegradeanswer/onegradeanswer.js
+var app = getApp();
 Page({
 
   /**
@@ -62,5 +63,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  mode1select: function (){
+    app.globalData.nowmode = 1;
+  },
+
+  mode2select: function (){
+    app.globalData.nowmode = 2;
+  },
+  mode3select: function (){
+    app.globalData.nowmode = 3;
   }
 })

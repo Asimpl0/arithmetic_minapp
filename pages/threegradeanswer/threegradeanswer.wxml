@@ -1,16 +1,16 @@
 <!--pages/threegradeanswer/threegradeanswer.wxml-->
 <view class="page">
   
-  <navigator hover-class="none" url="/components/calculate/calculate">
+  <navigator hover-class="none" bindtap="mode8select" url="../calculate/calculate">
     <image class="firstpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/d6991ecb231d0046.png"/>
   </navigator>
-  <navigator hover-class="none" url="/components/calculate/calculate">
+  <navigator hover-class="none" bindtap="mode9select" url="../calculate/calculate">
     <image class="secondpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/e54e46330c3b91bc.png"/>
   </navigator>
-  <navigator hover-class="none" url="/components/calculate/calculate">
+  <navigator hover-class="none" bindtap="mode10select" url="../calculate/calculate">
     <image class="thirdpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/d2fc9d29fffce737.png"/>
   </navigator>
-  <navigator hover-class="none" url="/components/calculate/calculate">
+  <navigator hover-class="none" bindtap="mode11select" url="../calculate/calculate">
     <image class="fourthpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/ad836c2747d01f5e.png"/>
   </navigator>
 

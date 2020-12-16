@@ -1,4 +1,5 @@
 // pages/threegradeanswer/threegradeanswer.js
+var app=getApp();
 Page({
 
   /**
@@ -62,5 +63,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  mode8select: function (){
+    app.globalData.nowmode = 8;
+  },
+
+  mode9select: function (){
+    app.globalData.nowmode = 9;
+  },
+  mode10select: function (){
+    app.globalData.nowmode = 10;
+  },
+  mode11select: function (){
+    app.globalData.nowmode = 11;
   }
 })

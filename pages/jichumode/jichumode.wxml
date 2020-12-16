@@ -1,13 +1,13 @@
 <!--pages/jichumode/jichumode.wxml-->
 
 <view class="page">
-  <navigator hover-class="none" url="/pages/onegradeanswer/onegradeanswer">
+  <navigator hover-class="none" bindtap="grade1select" url="/pages/onegradeanswer/onegradeanswer">
     <image class="firstpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/5dc813e6ceb88185.png"/>
   </navigator>
-  <navigator hover-class="none" url="/pages/twogradeanswer/twogradeanswer">
+  <navigator hover-class="none" bindtap="grade2select" url="/pages/twogradeanswer/twogradeanswer">
     <image class="secondpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/aca5f69a14d357f7.png"/>
   </navigator>
-  <navigator hover-class="none" url="/pages/threegradeanswer/threegradeanswer">
+  <navigator hover-class="none" bindtap="grade3select" url="/pages/threegradeanswer/threegradeanswer">
     <image class="thirdpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/c740c02b925dd360.png"/>
   </navigator>
   <image class="fourthpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/c7c441785436eb39.png"/>

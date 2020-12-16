@@ -1,11 +1,20 @@
 //app.js
+var app = getApp();
 App({
+  //全局变量
+  globalData:{
+    nowEquation:'',
+    nowAnswer:0,
+    nowInput:0,
+    nowgrade:0, //所选的年级
+    nowplay:0,//1代表基础模式，2代表强化模式，3代表无尽模式
+    nowmode:0//所选模式序号，为具体出题模式序号，从1-11
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {

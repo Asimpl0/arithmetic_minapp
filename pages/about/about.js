@@ -62,5 +62,28 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  handledirect:function(){
+    wx.showModal({
+      cancelColor: 'cancelColor',
+      title:"使用简介",
+      content:"基础模式分阶段使用，强化模式锻炼错题，无尽模式挑战自我",
+    })
+  },
+  
+  handlegitee:function(){
+    wx.showModal({
+      cancelColor: 'cancelColor',
+      title:"开源地址",
+      content:"https://gitee.com/simon_an/arithmetic_minapp",
+    })
+  },
+  
+  handleabout:function(){
+    wx.showModal({
+      cancelColor: 'cancelColor',
+      title:"关于",
+      content:"本小程序为华中科技大学计算机学院软工小组作业",
+    })
   }
 })

@@ -12,7 +12,7 @@
   <text class="text4">
     加油，少年，祝你好运！
   </text>
-  <navigator class="begin" hover-class="none" url="../wujinanswer/wujinanswer" >
+  <navigator class="begin" hover-class="none" url="../calculate/calculate" >
     <view class="tap">
       开始答题   
   <text class="iconfont icon-dianji"></text>

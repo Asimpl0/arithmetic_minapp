@@ -1,4 +1,6 @@
 // pages/jichumode/jichumode.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -14,19 +16,15 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  grade1select: function(){
+    app.globalData.nowgrade = 1;
+    console.log( app.globalData.nowgrade );
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  grade2select: function(){
+    app.globalData.nowgrade = 2;
+  },
+  grade3select: function(){
+    app.globalData.nowgrade = 3;
   },
 
   /**
@@ -41,26 +39,7 @@ Page({
    */
   onUnload: function () {
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
+
+
 })

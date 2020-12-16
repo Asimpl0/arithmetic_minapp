@@ -26,16 +26,16 @@
 
   <view class="main">
     <view class="firstblock">
-      <navigator class="firstleftn" hover-class="none" url="/pages/jichumode/jichumode">
+      <navigator class="firstleftn" bindtap="play1select" hover-class="none" url="/pages/jichumode/jichumode">
         <image class="firstleft" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/10/nWPMQ3NEmaYBzo7.png" />
       </navigator>
-      <navigator class="firstrightn" hover-class="none" url="/pages/qianghuamode/qianghuamode">
+      <navigator class="firstrightn" bindtap="play2select" hover-class="none" url="/pages/qianghuamode/qianghuamode">
         <image class="firstright" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/G5SvK9sVEPyZo24.png" />
       </navigator>
 
     </view>
     <view class="secondblock">
-      <navigator hover-class="none" url="/pages/wujinmode/wujinmode">
+      <navigator hover-class="none" bindtap="play3select" url="/pages/wujinmode/wujinmode">
         <image class="second" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/15/mN5f8tqxr9APTXj.png" />
       </navigator>
     </view>

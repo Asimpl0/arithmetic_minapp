@@ -1,2 +1,24 @@
-<!--pages/qianghuamode/qianghuamode.wxml-->
-<text>pages/qianghuamode/qianghuamode.wxml</text>
+<!--pages/wujinmode/wujinmode.wxml-->
+<view class="wujin">
+  <text class="text1">
+    你好 ~
+  </text>
+  <text class="text2">
+    强化模式题目
+  </text>
+  <text class="text3">
+    都根据错题生成
+  </text>
+  <text class="text4">
+    细心，这次一定没有问题！
+  </text>
+  <navigator class="begin" hover-class="none" url="../calculate/calculate" >
+    <view class="tap">
+      开始答题   
+  <text class="iconfont icon-dianji"></text>
+    </view>
+  </navigator>
+ 
+  <image class="image" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/16/3SiBntjNu9RpVyl.png"/>
+    
+</view>

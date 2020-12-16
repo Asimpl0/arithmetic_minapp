@@ -24,6 +24,8 @@ Page({
     this.data.lastday=wx.getStorageSync('day');
     this.data.hasUserInfo=wx.getStorageSync('hasinfo');
     this.data.userInfo=wx.getStorageSync('info');
+    app.globalData.nowgrade=wx.getStorageSync('grade');
+    console.log(app.globalData.nowgrade);
     this.setData({
       total:this.data.tatal,
       sign:this.data.sign,
@@ -107,6 +109,14 @@ Page({
     
     wx.setStorageSync('month', this.data.month);
     wx.setStorageSync('day', this.data.day);
-  }
-
+  },
+  play1select:function(){
+   app.globalData.nowplay=1;
+  },
+  play2select:function(){
+    app.globalData.nowplay=2;
+   },
+   play3select:function(){
+    app.globalData.nowplay=3;
+   }
 })

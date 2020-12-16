@@ -10,7 +10,7 @@
   <!--
     使用指南
   -->
-  <navigator class="direct"  hover-class="none" url="https://gitee.com/simon_an/arithmetic_minapp">
+  <navigator class="direct" bindtap="handledirect" hover-class="none" >
     <text class="directdetail">使用指南    </text>
     <text class="iconfont icon-zhinan"></text>
   </navigator>
@@ -20,7 +20,7 @@
   <view class="string1"></view>
  
 
-  <navigator class="gitee"  hover-class="none" url="https://gitee.com/simon_an/arithmetic_minapp">
+  <navigator class="gitee" bindtap="handlegitee" hover-class="none" >
     <text class="giteetxt">项目开源地址   </text>
     <text class="iconfont icon-gitee-fill-round"></text>
   </navigator>
@@ -48,7 +48,7 @@
   -->
   <view class="string4"></view>
   
-  <navigator class="aboutus"  hover-class="none" url="https://gitee.com/simon_an/arithmetic_minapp">
+  <navigator class="aboutus" bindtap="handleabout" hover-class="none" >
     <text class="aboutustxt">关于    </text>
     <text class="iconfont icon-ziyuan163"></text>
   </navigator>

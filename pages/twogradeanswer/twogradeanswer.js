@@ -1,4 +1,5 @@
 // pages/twogradeanswer/twogradeanswer.js
+var app=getApp();
 Page({
 
   /**
@@ -62,5 +63,18 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  mode4select: function (){
+    app.globalData.nowmode = 4;
+  },
+
+  mode5select: function (){
+    app.globalData.nowmode = 5;
+  },
+  mode6select: function (){
+    app.globalData.nowmode = 6;
+  },
+  mode7select: function (){
+    app.globalData.nowmode = 7;
+  },
 })

@@ -1,13 +1,13 @@
 <!--pages/onegradeanswer/onegradeanswer.wxml-->
 <view class="page">
   
-  <navigator hover-class="none" url="/pages/onegradeanswer/onegradeanswer">
+  <navigator hover-class="none" bindtap="mode1select" url="../calculate/calculate">
     <image class="firstpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/b8c122d50b8ffad1.png"/>
   </navigator>
-  <navigator hover-class="none" url="/pages/onegradeanswer/onegradeanswer">
+  <navigator hover-class="none" bindtap="mode2select" url="../calculate/calculate">
     <image class="secondpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/1dba5eb75d821605.png"/>
   </navigator>
-  <navigator hover-class="none" url="/pages/onegradeanswer/onegradeanswer">
+  <navigator hover-class="none" bindtap="mode3select" url="../calculate/calculate">
     <image class="thirdpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/8bf6eded13578e7a.png"/>
   </navigator>
   

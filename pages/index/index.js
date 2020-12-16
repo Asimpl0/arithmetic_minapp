@@ -25,7 +25,7 @@ Page({
     this.data.hasUserInfo=wx.getStorageSync('hasinfo');
     this.data.userInfo=wx.getStorageSync('info');
     app.globalData.nowgrade=wx.getStorageSync('grade');
-    console.log(app.globalData.nowgrade);
+
     this.setData({
       total:this.data.tatal,
       sign:this.data.sign,
@@ -35,11 +35,7 @@ Page({
       userInfo:this.data.userInfo
     })
     this.datetime();
-    console.log(this.data.month);
-    console.log(this.data.day);
-    console.log(this.data.lastmonth);
-    console.log(this.data.lastday);
-   
+ 
     if(parseInt(this.data.day)!=parseInt(this.data.lastday)||parseInt(this.data.month)!=parseInt(this.data.lastmonth)){
       this.setData({
           sign:false

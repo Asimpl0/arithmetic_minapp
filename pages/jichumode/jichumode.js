@@ -18,7 +18,7 @@ Page({
   },
   grade1select: function(){
     app.globalData.nowgrade = 1;
-    console.log( app.globalData.nowgrade );
+    // console.log( app.globalData.nowgrade );
   },
   grade2select: function(){
     app.globalData.nowgrade = 2;

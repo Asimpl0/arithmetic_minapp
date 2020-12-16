@@ -55,7 +55,7 @@ Page({
     var op1, op2, num1, num2, num3; 
     var operator = new Array(".", "+", "-"); 
       op1 = this.randInt(1, 2); //随机生成运算符 
-      console.log(op1); 
+      // console.log(op1); 
       do { 
         num1 = this.randInt(10, 99); 
         num2 = this.randInt(1, 9); 
@@ -544,17 +544,10 @@ Suan7: function (num1, sign1, num2) {
       })
       return;
     }
-    // 如果是重做错题，提交答案时重做题序号＋1
-    if(app.globalData.nowgrade==5)
-    {
-      this.setData({
-        redonumber: this.data.redonumber + 1,
-      })
-    }
     var input = parseInt(this.data.InputAnswerNumber); //用户的回答转化成整型
     app.globalData.nowInput = input;
     // 统计做题总数
-    if (app.globalData.nowgrade >= 1 && app.globalData.nowgrade<=4)
+    if (app.globalData.nowplay >= 1 && app.globalData.nowplay<=3)
     {
       var num=wx.getStorageSync('exercisenum');
       if(!num){
@@ -610,30 +603,103 @@ Suan7: function (num1, sign1, num2) {
       
         //进入下一题
       else{
-        if (app.globalData.nowgrade==1)
+        if(palychoice==1){ //基础模式
+          if (modechoice==1)
         {
-          this.generateEquation();
+          this.generateEquation1();
         }
-        else if (app.globalData.nowgrade==2)
+        else if (modechoice==2)
         {
           this.generateEquation2();
         }
-        else if (app.globalData.nowgrade == 3) {
+        else if (modechoice == 3) {
           this.generateEquation3();
         }
-        else if (app.globalData.nowgrade == 4) {
+        else if (modechoice == 4) {
           this.generateEquation4();
         }
-        else if (app.globalData.nowgrade == 5) {
+        else if (modechoice == 5) {
           this.generateEquation5();
         }
+        else if (modechoice==6)
+        {
+          this.generateEquation6();
+        }
+        else if (modechoice == 7) {
+          this.generateEquation7();
+        }
+        else if (modechoice == 8) {
+          this.generateEquation8();
+        }
+        else if (modechoice == 9) {
+          this.generateEquation9();
+        }
+        else if (modechoice == 10) {
+          this.generateEquation10();
+        }
+        else if(modechoice == 11){
+          this.generateEquation11();
+        }
+        }
+
+        else if(palychoice==2){  //强化模式的下一题逻辑
+
+        }
+
+        else if(palychoice==3){
+          var op;
+          if(gradechoice==1){
+            op=randint(1,3);
+          }
+          else if(gradechoice==2){
+            op=randint(1,7);
+          }
+          else if(gradechoice==3){
+            op=randint(1,11);
+          }
+          switch(op){
+            case 1:
+              this.generateEquation1();
+              break;
+            case 2:
+              this.generateEquation2();
+              break;
+            case 3:
+              this.generateEquation3();
+              break;
+            case 4:
+              this.generateEquation4();
+              break;
+            case 5:
+              this.generateEquation5();
+              break;
+            case 6:
+              this.generateEquation6();
+              break;
+            case 7:
+              this.generateEquation7();
+              break;
+            case 8:
+              this.generateEquation8();
+              break;
+            case 9:
+              this.generateEquation9();
+              break;
+            case 10:
+              this.generateEquation10();
+              break;
+            case 11:
+              this.generateEquation11();
+              break;
+          }
+        }
+        
         this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
         this.setData({
           equation: this.data.equation,
           numpercent: this.data.numpercent,
         })
       }
-
     }
     else if (input != answer) {
       wx.showToast({
@@ -696,30 +762,104 @@ Suan7: function (num1, sign1, num2) {
       }
       // 进入下一题
       else{
-        if (app.globalData.nowgrade == 1) {
-          this.generateEquation();
+        if(palychoice==1){ //基础模式
+          if (modechoice==1)
+        {
+          this.generateEquation1();
         }
-        else if (app.globalData.nowgrade == 2) {
+        else if (modechoice==2)
+        {
           this.generateEquation2();
         }
-        else if (app.globalData.nowgrade == 3) {
+        else if (modechoice == 3) {
           this.generateEquation3();
         }
-        else if (app.globalData.nowgrade == 4) {
+        else if (modechoice == 4) {
           this.generateEquation4();
         }
-        else if (app.globalData.nowgrade == 5) {
+        else if (modechoice == 5) {
           this.generateEquation5();
+        }
+        else if (modechoice==6)
+        {
+          this.generateEquation6();
+        }
+        else if (modechoice == 7) {
+          this.generateEquation7();
+        }
+        else if (modechoice == 8) {
+          this.generateEquation8();
+        }
+        else if (modechoice == 9) {
+          this.generateEquation9();
+        }
+        else if (modechoice == 10) {
+          this.generateEquation10();
+        }
+        else if(modechoice == 11){
+          this.generateEquation11();
+        }
+        }
+
+        else if(palychoice==2){  //强化模式的下一题逻辑
+
+        }
+
+        else if(palychoice==3){
+          var op;
+          if(gradechoice==1){
+            op=randint(1,3);
+          }
+          else if(gradechoice==2){
+            op=randint(1,7);
+          }
+          else if(gradechoice==3){
+            op=randint(1,11);
+          }
+          switch(op){
+            case 1:
+              this.generateEquation1();
+              break;
+            case 2:
+              this.generateEquation2();
+              break;
+            case 3:
+              this.generateEquation3();
+              break;
+            case 4:
+              this.generateEquation4();
+              break;
+            case 5:
+              this.generateEquation5();
+              break;
+            case 6:
+              this.generateEquation6();
+              break;
+            case 7:
+              this.generateEquation7();
+              break;
+            case 8:
+              this.generateEquation8();
+              break;
+            case 9:
+              this.generateEquation9();
+              break;
+            case 10:
+              this.generateEquation10();
+              break;
+            case 11:
+              this.generateEquation11();
+              break;
+          }
         }
         this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
         this.setData({
           equation: this.data.equation,
-          numpercent: this.data.numpercent
+          numpercent: this.data.numpercent,
         })
       }
-
     }
-  },
+},
   //提示答题结束
   inputAnswer_end:function(){
     this.setData({
@@ -775,44 +915,30 @@ Suan7: function (num1, sign1, num2) {
       wx.setStorageSync('exercisenum', num);
     }
   },
+  jichuplay:function(){
+    if(modechoice==1){
+      this.generateEquation1();
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setTime()//计时器
+    console.log(12);
     var that = this
-    // 根据性别调整背景颜色
-    if (app.globalData.yourgender == "boy") {
-      that.setData({
-        pageBackgroundColor: 'rbga(213,236,249,0.5)',
-        groundColor: '#D5ECF9',
-      });
-    }
-    else if (app.globalData.yourgender == "girl") {
-      that.setData({
-        pageBackgroundColor: 'rbga(213,236,249,0.5)',
-        groundColor: '#FFCCCC',
-      });
-    }
-    else {
-      that.setData({
-        pageBackgroundColor: '#FFCCCC',
-        groundColor: '#FFFFFF',
-      });
-    }
-    // 将从index界面穿过来的参数赋值
-    that.setData({
-      timename: options.time,
-      numname: options.num,
-      signname:options.thesign,
-      signnumname: options.thesignnum,
-    })
+    var modechoice=app.globalData.nowmode
     var gradechoice=app.globalData.nowgrade
+    var palychoice=app.globalData.nowplay;
+
     //如果选择一年级则加载一年级的题目
-    if(gradechoice==1){
-      this.generateEquation();
+    if(modechoice==1){
+      this.generateEquation1();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      console.log(this.data.equation);
       this.setData({
+        timename: 2,
+        numname: 20,
         equation: this.data.equation,
       })
     }

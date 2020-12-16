@@ -129,6 +129,7 @@ Page({
   }, 
 // 二年级
 //100以内的加减
+
 generateEquation4: function () {
   var num;
   var i;

@@ -10,5 +10,5 @@
   <navigator hover-class="none" bindtap="grade3select" url="/pages/threegradeanswer/threegradeanswer">
     <image class="thirdpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/c740c02b925dd360.png"/>
   </navigator>
-  <image class="fourthpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/c7c441785436eb39.png"/>
+  <image class="fourthpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/a560f97e224b5e88.png"/>
 </view>

@@ -1,7 +1,9 @@
 <!--pages/search/search.wxml-->
-<view class="search">
+<view class="page">
+  <view class="search">
   <image class="add" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/12/CwfUNZdhbqeTrHl.png"/>
   <image class="multi" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/12/KoLI4DVWOugvXR5.png"/>
   <image class="more" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/12/DHr3UMzjxa8BIsb.png"/>
   
+</view>
 </view>

@@ -36,7 +36,7 @@
     </view>
     <view class="secondblock">
       <navigator hover-class="none" url="/pages/wujinmode/wujinmode">
-        <image class="second" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/11/IjrawGglsQVFTu4.png" />
+        <image class="second" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/15/mN5f8tqxr9APTXj.png" />
       </navigator>
     </view>
     <view class="more">

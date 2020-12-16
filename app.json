@@ -1,7 +1,7 @@
 {
   "pages":[
     "pages/index/index",
-    
+   
     "pages/wujinmode/wujinmode",
     "pages/search/search",
     "pages/about/about",
@@ -11,13 +11,12 @@
     "pages/wujinanswer/wujinanswer",
     "pages/onegradeanswer/onegradeanswer",
     "pages/twogradeanswer/twogradeanswer",
-    "pages/threegradeanswer/threegradeanswer",
-    "pages/calculate/calculate"
+    "pages/threegradeanswer/threegradeanswer"
 
   ],
   "window":{
     
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FFFFCC",
     "navigationBarTitleText": "恐龙口算",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": true,
@@ -25,6 +24,7 @@
   },
   "tabBar": {
     "borderStyle": "white",
+    "backgroundColor": "#FFFFCC",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "主页",

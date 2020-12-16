@@ -1,4 +1,13 @@
 /* pages/search/search.wxss */
+.page {
+  display: block;
+  background-color: #FFFFCC;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .add{
   margin-top: 200rpx;
   margin-left: 70rpx;

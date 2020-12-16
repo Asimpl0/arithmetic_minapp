@@ -1,6 +1,6 @@
 <!--pages/jichumode/jichumode.wxml-->
 
-<view>
+<view class="page">
   <navigator hover-class="none" url="/pages/onegradeanswer/onegradeanswer">
     <image class="firstpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/5dc813e6ceb88185.png"/>
   </navigator>

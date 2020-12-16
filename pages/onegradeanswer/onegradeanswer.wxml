@@ -1,5 +1,5 @@
 <!--pages/onegradeanswer/onegradeanswer.wxml-->
-<view>
+<view class="page">
   
   <navigator hover-class="none" url="/pages/onegradeanswer/onegradeanswer">
     <image class="firstpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/b8c122d50b8ffad1.png"/>

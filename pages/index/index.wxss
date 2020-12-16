@@ -6,6 +6,16 @@
   margin-top: 30rpx;
 }
 
+.page {
+  display: block;
+  background-color: #FFFFCC;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .avatar {
   width: 105rpx;
   height: 105rpx;
@@ -85,29 +95,29 @@
 
 .second{
   margin-top: 20rpx;
-  margin-left: 30rpx;
-  width: 720rpx;
+  margin-left: 48rpx;
+  width: 700rpx;
 }
 
 swiper{
   margin-top: 30rpx;
-  margin-left: 55rpx;
-  width: 620rpx;
+  margin-left: 48rpx;
+  width: 630rpx;
  
 }
 
 .image1{
-  width:  620rpx;
+  width:  630rpx;
   border-radius: 20rpx;
 }
 
 .image2{
-  width:  620rpx;
+  width:  630rpx;
   border-radius: 20rpx;
 }
 
 .image3{
-  width:  620rpx;
+  width:  630rpx;
   border-radius: 20rpx;
 }
 

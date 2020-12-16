@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "calculate":"/components/calculate/calculate"
+  }
 }

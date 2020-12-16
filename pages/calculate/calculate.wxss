@@ -72,7 +72,31 @@
   border-radius:25rpx;
   
   background-color:#B5E655;
+  background-image: url("https://i.loli.net/2020/12/16/OGZ6H3JNjXvbzPc.png");
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
 } 
+
+.timu{
+  display: flex;
+  font-size: 80rpx;
+  color: white;
+  flex-direction: row;
+}
+
+.equstyle{
+  width: 300rpx;
+  margin-top: 90rpx;
+  margin-left: 80rpx;
+}
+
+.input{
+  display: flex;
+  width: 200rpx;
+  height: 100rpx;
+  margin-top: 90rpx;
+}
 
 .answerimage{
     display: flex;
@@ -81,7 +105,7 @@
     height: 180rpx;
     width: 220rpx;
     background-size: 100% 100%;
-    background-image: url("https://i.loli.net/2020/12/15/Y45unAgep8qaRbC.png")
+   
 }
 /* 键盘 */
 .inputAnswer_digital_Box{

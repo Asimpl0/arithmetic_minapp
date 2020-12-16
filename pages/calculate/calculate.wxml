@@ -27,10 +27,9 @@
     <view class="weui-cell_bd">
       <view class="questionsbk">
         <view class="timu">
-          <view class="equstyle">{{equation}}</view>
-          <view class="ansstyle"><input value='{{InputAnswerNumber}}' disabled='true' placeholder='{{holder}}'
+            <view class="equstyle">{{equation}}</view>
+            <input class="input" value='{{InputAnswerNumber}}'disabled='true' placeholder='{{holder}}'
               maxlength='4'></input>
-          </view>
         </view>
         <view class="answerimage"></view>
       </view>

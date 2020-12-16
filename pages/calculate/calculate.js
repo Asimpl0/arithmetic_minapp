@@ -49,7 +49,84 @@ Page({
       }
     }, 1000)
   },
-
+  generateEquation1: function () { 
+    var equation; 
+    var ans; 
+    var op1, op2, num1, num2, num3; 
+    var operator = new Array(".", "+", "-"); 
+      op1 = this.randInt(1, 2); //随机生成运算符 
+      console.log(op1); 
+      do { 
+        num1 = this.randInt(10, 99); 
+        num2 = this.randInt(1, 9); 
+        ans = this.convertOp(op1, num1, num2); //计算答案 
+      } while (ans < 0 || ans > 100); //直到生成算式的结果满足要求 
+      equation = num1.toString() + operator[op1] + num2.toString() + "="; 
+    app.globalData.nowEquation = equation; 
+    app.globalData.nowAnswer = ans; 
+    return 0; 
+  }, 
+  //随机生成min-max闭区间内的一个整数 
+  randInt: function (min, max) { 
+    var randint = Math.floor(Math.random() * (max - min + 1)) + min; 
+    return randint; 
+  }, 
+  //若op为1，则返回num1+num2的结果，若op为2，则返回num1-num2的结果 
+  convertOp: function (op, num1, num2) { 
+    var ans; 
+    switch (op) { 
+      case 1: 
+        ans = num1 + num2; 
+        break; 
+      case 2: 
+        ans = num1 - num2; 
+        break; 
+    } 
+    return ans; 
+  }, 
+ // 一年级模块2 
+  generateEquation2: function () { 
+    var equation; 
+    var ans; 
+    var op1, op2, num1, num2, num3; 
+    var operator = new Array(".", "+", "-"); 
+    var operatornum = 1; //随机生成运算符数量 
+    if (operatornum == 1) {  //一个运算符 
+      op1 = this.randInt(1, 2); //随机生成运算符 
+      console.log(op1); 
+      do { 
+        num1 = this.randInt(1,9); 
+        num1 = num1 * 10; 
+        num2 = this.randInt(1,9); 
+        num2 = num2 * 10; 
+        ans = this.convertOp(op1, num1, num2); //计算答案 
+      } while (ans < 0 || ans > 100); //直到生成算式的结果满足要求 
+      equation = num1.toString() + operator[op1] + num2.toString() + "="; 
+    } 
+    app.globalData.nowEquation = equation; 
+    app.globalData.nowAnswer = ans; 
+    return 0; 
+  }, 
+   // 一年级模块3（两位数加减一位数加减一位数） 
+   generateEquation3: function () { 
+    var equation; 
+    var ans; 
+    var op1, op2, num1, num2, num3; 
+    var operator = new Array(".", "+", "-"); 
+      op1 = this.randInt(1, 2); 
+      op2 = this.randInt(1, 2); 
+      do { 
+        num1 = this.randInt(1, 99); 
+        num2 = this.randInt(1, 9); 
+        num3 = this.randInt(1, 9); 
+        ans = this.convertOp(op1, num1, num2); //计算答案 
+        ans = this.convertOp(op2, ans, num3); 
+      } while (ans < 0 || ans > 100); //直到生成算式的结果满足要求 
+      equation = num1.toString() + operator[op1] + num2.toString() + operator[op2] + num3.toString() + "="; 
+    app.globalData.nowEquation = equation; 
+    app.globalData.nowAnswer = ans; 
+    return 0; 
+  }, 
 // 三年级部分
   //3-1
   // 两位数加减两位数

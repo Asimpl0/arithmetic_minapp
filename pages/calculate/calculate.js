@@ -28,7 +28,10 @@ Page({
     timepercent:0,//时间进度百分比
     correctrate:0,//正确率
     time:0,//定时器变量
-    redonumber:0//重做序号
+    redonumber:0,//重做序号
+    playchoice:0,
+    modechoice:0,
+    gradechoice:0
   },
   // 计时器
   setTime() {
@@ -603,58 +606,58 @@ Suan7: function (num1, sign1, num2) {
       
         //进入下一题
       else{
-        if(palychoice==1){ //基础模式
-          if (modechoice==1)
+        if(this.data.playchoice==1){ //基础模式
+          if (this.data.modechoice==1)
         {
           this.generateEquation1();
         }
-        else if (modechoice==2)
+        else if (this.data.modechoice==2)
         {
           this.generateEquation2();
         }
-        else if (modechoice == 3) {
+        else if (this.data.modechoice == 3) {
           this.generateEquation3();
         }
-        else if (modechoice == 4) {
+        else if (this.data.modechoice == 4) {
           this.generateEquation4();
         }
-        else if (modechoice == 5) {
+        else if (this.data.modechoice == 5) {
           this.generateEquation5();
         }
-        else if (modechoice==6)
+        else if (this.data.modechoice==6)
         {
           this.generateEquation6();
         }
-        else if (modechoice == 7) {
+        else if (this.data.modechoice == 7) {
           this.generateEquation7();
         }
-        else if (modechoice == 8) {
+        else if (this.data.modechoice == 8) {
           this.generateEquation8();
         }
-        else if (modechoice == 9) {
+        else if (this.data.modechoice == 9) {
           this.generateEquation9();
         }
-        else if (modechoice == 10) {
+        else if (this.data.modechoice == 10) {
           this.generateEquation10();
         }
-        else if(modechoice == 11){
+        else if(this.data.modechoice == 11){
           this.generateEquation11();
         }
         }
 
-        else if(palychoice==2){  //强化模式的下一题逻辑
+        else if(this.data.playchoice==2){  //强化模式的下一题逻辑
 
         }
 
-        else if(palychoice==3){
+        else if(this.data.playchoice==3){
           var op;
-          if(gradechoice==1){
+          if(this.data.gradechoice==1){
             op=randint(1,3);
           }
-          else if(gradechoice==2){
+          else if(this.data.gradechoice==2){
             op=randint(1,7);
           }
-          else if(gradechoice==3){
+          else if(this.data.gradechoice==3){
             op=randint(1,11);
           }
           switch(op){
@@ -762,58 +765,58 @@ Suan7: function (num1, sign1, num2) {
       }
       // 进入下一题
       else{
-        if(palychoice==1){ //基础模式
-          if (modechoice==1)
+        if(this.data.playchoice==1){ //基础模式
+          if (this.data.modechoice==1)
         {
           this.generateEquation1();
         }
-        else if (modechoice==2)
+        else if (this.data.modechoice==2)
         {
           this.generateEquation2();
         }
-        else if (modechoice == 3) {
+        else if (this.data.modechoice == 3) {
           this.generateEquation3();
         }
-        else if (modechoice == 4) {
+        else if (this.data.modechoice == 4) {
           this.generateEquation4();
         }
-        else if (modechoice == 5) {
+        else if (this.data.modechoice == 5) {
           this.generateEquation5();
         }
-        else if (modechoice==6)
+        else if (this.data.modechoice==6)
         {
           this.generateEquation6();
         }
-        else if (modechoice == 7) {
+        else if (this.data.modechoice == 7) {
           this.generateEquation7();
         }
-        else if (modechoice == 8) {
+        else if (this.data.modechoice == 8) {
           this.generateEquation8();
         }
-        else if (modechoice == 9) {
+        else if (this.data.modechoice == 9) {
           this.generateEquation9();
         }
-        else if (modechoice == 10) {
+        else if (this.data.modechoice == 10) {
           this.generateEquation10();
         }
-        else if(modechoice == 11){
+        else if(this.data.modechoice == 11){
           this.generateEquation11();
         }
         }
 
-        else if(palychoice==2){  //强化模式的下一题逻辑
+        else if(this.data.playchoice==2){  //强化模式的下一题逻辑
 
         }
 
-        else if(palychoice==3){
+        else if(this.data.playchoice==3){
           var op;
-          if(gradechoice==1){
+          if(this.data.gradechoice==1){
             op=randint(1,3);
           }
-          else if(gradechoice==2){
+          else if(this.data.gradechoice==2){
             op=randint(1,7);
           }
-          else if(gradechoice==3){
+          else if(this.data.gradechoice==3){
             op=randint(1,11);
           }
           switch(op){
@@ -916,7 +919,7 @@ Suan7: function (num1, sign1, num2) {
     }
   },
   jichuplay:function(){
-    if(modechoice==1){
+    if(this.data.modechoice==1){
       this.generateEquation1();
     }
   },
@@ -926,13 +929,16 @@ Suan7: function (num1, sign1, num2) {
   onLoad: function (options) {
     this.setTime()//计时器
     console.log(12);
-    var that = this
-    var modechoice=app.globalData.nowmode
-    var gradechoice=app.globalData.nowgrade
-    var palychoice=app.globalData.nowplay;
+     let that = this
+     this.setData({
+      modechoice:app.globalData.nowmode,
+     gradechoice:app.globalData.nowgrade,
+     playchoice:app.globalData.nowplay
+     })
+     
 
     //如果选择一年级则加载一年级的题目
-    if(modechoice==1){
+    if(this.data.modechoice==1){
       this.generateEquation1();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       console.log(this.data.equation);
@@ -942,7 +948,7 @@ Suan7: function (num1, sign1, num2) {
         equation: this.data.equation,
       })
     }
-    else if(gradechoice==2)
+    else if(this.data.gradechoice==2)
     {
       this.generateEquation2();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
@@ -950,21 +956,21 @@ Suan7: function (num1, sign1, num2) {
         equation:this.data.equa
       })
     }
-    else if (gradechoice == 3) {
+    else if (this.data.gradechoice == 3) {
       this.generateEquation3();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
         equation: this.data.equa
       })
     }
-    else if (gradechoice == 4) {
+    else if (this.data.gradechoice == 4) {
       this.generateEquation4();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
         equation: this.data.equa
       })
     }
-    else if (gradechoice == 5) {
+    else if (this.data.gradechoice == 5) {
       this.generateEquation5();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({

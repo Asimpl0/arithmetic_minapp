@@ -76,16 +76,19 @@
 
 .timu{
   display: flex;
+  display: -webkit-flex;
   font-size: 70rpx;
   color: white;
   width: 600rpx;
   flex-direction: row;
   justify-content: center;
+  align-items:center;
+  margin-top:50rpx;
 }
 
 .equstyle{
   
-  margin-top: 90rpx;
+
   margin-left: 60rpx;
 }
 
@@ -93,7 +96,6 @@
   display: flex;
   width: 200rpx;
   height: 100rpx;
-  margin-top: 95rpx;
 }
 
 .answerimage{

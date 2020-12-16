@@ -49,7 +49,256 @@ Page({
       }
     }, 1000)
   },
+  generateEquation1: function () { 
+    var equation; 
+    var ans; 
+    var op1, op2, num1, num2, num3; 
+    var operator = new Array(".", "+", "-"); 
+      op1 = this.randInt(1, 2); //随机生成运算符 
+      console.log(op1); 
+      do { 
+        num1 = this.randInt(10, 99); 
+        num2 = this.randInt(1, 9); 
+        ans = this.convertOp(op1, num1, num2); //计算答案 
+      } while (ans < 0 || ans > 100); //直到生成算式的结果满足要求 
+      equation = num1.toString() + operator[op1] + num2.toString() + "="; 
+    app.globalData.nowEquation = equation; 
+    app.globalData.nowAnswer = ans; 
+    return 0; 
+  }, 
+  //随机生成min-max闭区间内的一个整数 
+  randInt: function (min, max) { 
+    var randint = Math.floor(Math.random() * (max - min + 1)) + min; 
+    return randint; 
+  }, 
+  //若op为1，则返回num1+num2的结果，若op为2，则返回num1-num2的结果 
+  convertOp: function (op, num1, num2) { 
+    var ans; 
+    switch (op) { 
+      case 1: 
+        ans = num1 + num2; 
+        break; 
+      case 2: 
+        ans = num1 - num2; 
+        break; 
+    } 
+    return ans; 
+  }, 
+ // 一年级模块2 
+  generateEquation2: function () { 
+    var equation; 
+    var ans; 
+    var op1, op2, num1, num2, num3; 
+    var operator = new Array(".", "+", "-"); 
+    var operatornum = 1; //随机生成运算符数量 
+    if (operatornum == 1) {  //一个运算符 
+      op1 = this.randInt(1, 2); //随机生成运算符 
+      console.log(op1); 
+      do { 
+        num1 = this.randInt(1,9); 
+        num1 = num1 * 10; 
+        num2 = this.randInt(1,9); 
+        num2 = num2 * 10; 
+        ans = this.convertOp(op1, num1, num2); //计算答案 
+      } while (ans < 0 || ans > 100); //直到生成算式的结果满足要求 
+      equation = num1.toString() + operator[op1] + num2.toString() + "="; 
+    } 
+    app.globalData.nowEquation = equation; 
+    app.globalData.nowAnswer = ans; 
+    return 0; 
+  }, 
+   // 一年级模块3（两位数加减一位数加减一位数） 
+   generateEquation3: function () { 
+    var equation; 
+    var ans; 
+    var op1, op2, num1, num2, num3; 
+    var operator = new Array(".", "+", "-"); 
+      op1 = this.randInt(1, 2); 
+      op2 = this.randInt(1, 2); 
+      do { 
+        num1 = this.randInt(1, 99); 
+        num2 = this.randInt(1, 9); 
+        num3 = this.randInt(1, 9); 
+        ans = this.convertOp(op1, num1, num2); //计算答案 
+        ans = this.convertOp(op2, ans, num3); 
+      } while (ans < 0 || ans > 100); //直到生成算式的结果满足要求 
+      equation = num1.toString() + operator[op1] + num2.toString() + operator[op2] + num3.toString() + "="; 
+    app.globalData.nowEquation = equation; 
+    app.globalData.nowAnswer = ans; 
+    return 0; 
+  }, 
+// 二年级
+//100以内的加减
 
+generateEquation4: function () {
+  var num;
+  var i;
+  var answer;
+  var Sign = ["+", "-"];
+  var equation = new Array();
+  for (i = 0; i < Sign.length; i++)
+    equation[i] = "0";
+  var num11 = this.randomRange(0, 2);
+  var sign1 = Sign[num11];
+  do {
+    var num1 = this.randomRange(10, 100);
+    var num2 = this.randomRange(10, 100);
+    equation[0] = num1;
+    equation[2] = num2;
+    equation[1] = sign1;
+    var E = equation[0] + equation[1] + equation[2];
+  }
+  while (this.Suan4(num1, sign1, num2) <= 0 || this.Suan4(num1, sign1, num2) > 100 || (this.Suan4(num1, sign1, num2) % 1) != 0 || num1 == 0 || num2 == 0 )//规定不能出现0，结果在0~100之间
+
+  this.setData({
+    equa: E+'=',
+    answer: (this.Suan4(num1, sign1, num2)).toString()
+  })
+  app.globalData.nowEquation = this.data.equa;
+  app.globalData.nowAnswer = this.Suan4(num1, sign1, num2);
+  return 0;
+},
+
+randomRange: function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+},
+Suan4: function (num1, sign1, num2) {
+  var ans;
+  if (sign1=="+") ans=num1+num2;
+  else if (sign1=="-") ans=num1-num2;
+  return ans;
+},
+//100以内加减混合
+generateEquation5: function () {
+  var num;
+  var i;
+  var answer;
+  var Sign = ["+", "-"];
+  var equation = new Array();
+  for (i = 0; i < Sign.length; i++)
+    equation[i] = "0";
+  var num11 = this.randomRange(0, 2);
+  var num22 = this.randomRange(0, 2);
+  var sign1 = Sign[num11];
+  var sign2 = Sign[num22];
+  do {
+    var num1 = this.randomRange(1, 100);
+    var num2 = this.randomRange(1, 100);
+    var num3 = this.randomRange(1, 100);
+    equation[0] = num1;
+    equation[2] = num2;
+    equation[4] = num3;
+    equation[1] = sign1;
+    equation[3] = sign2;
+    var E = equation[0] + equation[1] + equation[2] + equation[3] + equation[4];
+  }
+  while (this.Suan5(num1, sign1, num2, sign2, num3) <= 0 || this.Suan5(num1, sign1, num2, sign2, num3) > 100 || (this.Suan5(num1, sign1, num2, sign2, num3) % 1) != 0 )//规定不能出现0，结果在0~100之间
+
+  this.setData({
+    equa: E+'=',
+    answer: (this.Suan5(num1, sign1, num2, sign2, num3)).toString()
+  })
+  app.globalData.nowEquation = this.data.equa;
+  app.globalData.nowAnswer = this.Suan5(num1, sign1, num2, sign2, num3);
+  return 0;
+},
+
+randomRange: function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+},
+Suan5: function (num1, sign1, num2, sign2, num3) {
+  var ans;
+  if (sign1 == "+" && sign2 == "+") ans = num1 + num2 + num3;
+  else if (sign1 == "+" && sign2 == "-") ans = num1 + num2 - num3;
+  else if (sign1 == "-" && sign2 == "+") ans = num1 - num2 + num3;
+  else if (sign1 == "-" && sign2 == "-") ans = num1 - num2 - num3;
+  return ans;
+},
+//整百整千加减
+generateEquation6: function () {
+  var num;
+  var i;
+  var answer;
+  var Sign = ["+", "-"];
+  var equation = new Array();
+  for (i = 0; i < Sign.length; i++)
+    equation[i] = "0";
+  var num11 = this.randomRange(0, 2);
+  var sign1 = Sign[num11];
+  do {
+    var num1 = (this.randomRange(0, 100))*100;
+    var num2 = (this.randomRange(0, 10))*100;
+    equation[0] = num1;
+    equation[2] = num2;
+    equation[1] = sign1;
+    var E = equation[0] + equation[1] + equation[2];
+  }
+  while (this.Suan6(num1, sign1, num2) <= 0 || this.Suan6(num1, sign1, num2) > 10000 || (this.Suan6(num1, sign1, num2) % 1) != 0 || num1 == 0 || num2 == 0 )//规定不能出现0，结果在0~100之间
+
+  this.setData({
+    equa: E+'=',
+    answer: (this.Suan6(num1, sign1, num2)).toString()
+  })
+  app.globalData.nowEquation = this.data.equa;
+  app.globalData.nowAnswer = this.Suan6(num1, sign1, num2);
+  return 0;
+},
+
+randomRange: function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+},
+Suan6: function (num1, sign1, num2) {
+  var ans;
+  if (sign1=="+") ans=num1+num2;
+  else if (sign1=="-") ans=num1-num2;
+  return ans;
+},
+//九九乘法表内乘除
+generateEquation7: function () {
+  var num;
+  var i;
+  var answer;
+  var Sign = ["*", "/"];
+  var equation = new Array();
+  for (i = 0; i < Sign.length; i++)
+    equation[i] = "0";
+  var num11 = this.randomRange(0, 2);
+  var sign1 = Sign[num11];
+  do {
+    if(sign1 == "*"){
+      var num1 = this.randomRange(1, 10);
+      var num2 = this.randomRange(1, 10);
+    }
+    else if(sign1 == "/"){
+      var num3 = this.randomRange(1, 10);
+      var num2 = this.randomRange(2, 10);
+      num1 = num2 * num3;
+    }
+    equation[0] = num1;
+    equation[2] = num2;
+    equation[1] = sign1;
+    var E = equation[0] + equation[1] + equation[2];
+  }
+  while (this.Suan7(num1, sign1, num2) <= 0 || (this.Suan7(num1, sign1, num2) % 1) != 0 )//规定不能出现0，结果在0~100之间
+
+  this.setData({
+    equa: E+'=',
+    answer: (this.Suan7(num1, sign1, num2)).toString()
+  })
+  app.globalData.nowEquation = this.data.equa;
+  app.globalData.nowAnswer = this.Suan7(num1, sign1, num2);
+  return 0;
+},
+
+randomRange: function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+},
+Suan7: function (num1, sign1, num2) {
+  var ans;
+  if (sign1 == "*") ans = num1 * num2;
+  else if (sign1 == "/") ans = num1 / num2;
+  return ans;
+},
 // 三年级部分
   //3-1
   // 两位数加减两位数

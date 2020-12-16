@@ -72,30 +72,28 @@
   border-radius:25rpx;
   
   background-color:#B5E655;
-  background-image: url("https://i.loli.net/2020/12/16/OGZ6H3JNjXvbzPc.png");
-  background-repeat:no-repeat;
-  background-size:100% 100%;
-  -moz-background-size:100% 100%;
 } 
 
 .timu{
   display: flex;
   font-size: 80rpx;
   color: white;
+  width: 600rpx;
   flex-direction: row;
+  justify-content: center;
 }
 
 .equstyle{
-  width: 300rpx;
+  
   margin-top: 90rpx;
-  margin-left: 80rpx;
+  margin-left: 60rpx;
 }
 
 .input{
   display: flex;
   width: 200rpx;
   height: 100rpx;
-  margin-top: 90rpx;
+  margin-top: 95rpx;
 }
 
 .answerimage{

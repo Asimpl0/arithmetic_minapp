@@ -71,8 +71,8 @@ Page({
   }, 
   //随机生成min-max闭区间内的一个整数 
   randInt: function (min, max) { 
-    var randint = Math.floor(Math.random() * (max - min + 1)) + min; 
-    return randint; 
+    var randInt = Math.floor(Math.random() * (max - min + 1)) + min; 
+    return randInt; 
   }, 
   //若op为1，则返回num1+num2的结果，若op为2，则返回num1-num2的结果 
   convertOp: function (op, num1, num2) { 
@@ -463,8 +463,8 @@ Suan7: function (num1, sign1, num2) {
   },
   //随机生成min-max闭区间内的一个整数
   randInt: function (min, max) {
-    var randint = Math.floor(Math.random() * (max - min + 1)) + min;
-    return randint;
+    var randInt = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randInt;
   },
   //若op为1，则返回num1+num2的结果，若op为2，则返回num1-num2的结果
   convertOp: function (op, num1, num2) {
@@ -652,13 +652,13 @@ Suan7: function (num1, sign1, num2) {
         else if(this.data.playchoice==3){
           var op;
           if(this.data.gradechoice==1){
-            op=randint(1,3);
+            op=this.randInt(1,3);
           }
           else if(this.data.gradechoice==2){
-            op=randint(1,7);
+            op=this.randInt(1,7);
           }
           else if(this.data.gradechoice==3){
-            op=randint(1,11);
+            op=this.randInt(1,11);
           }
           switch(op){
             case 1:
@@ -811,13 +811,13 @@ Suan7: function (num1, sign1, num2) {
         else if(this.data.playchoice==3){
           var op;
           if(this.data.gradechoice==1){
-            op=randint(1,3);
+            op=this.randInt(1,3);
           }
           else if(this.data.gradechoice==2){
-            op=randint(1,7);
+            op=this.randInt(1,7);
           }
           else if(this.data.gradechoice==3){
-            op=randint(1,11);
+            op=this.randInt(1,11);
           }
           switch(op){
             case 1:
@@ -926,57 +926,163 @@ Suan7: function (num1, sign1, num2) {
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function (options) {
     this.setTime()//计时器
     console.log(12);
      let that = this
      this.setData({
-      modechoice:app.globalData.nowmode,
+     modechoice:app.globalData.nowmode,
      gradechoice:app.globalData.nowgrade,
      playchoice:app.globalData.nowplay
      })
      
 
     //如果选择一年级则加载一年级的题目
-    if(this.data.modechoice==1){
-      this.generateEquation1();
-      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
-      console.log(this.data.equation);
+    if(this.data.playchoice==1){
       this.setData({
         timename: 2,
         numname: 20,
-        equation: this.data.equation,
+      })
+    if(this.data.modechoice==1){
+      this.generateEquation1();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        equation:this.data.equation
       })
     }
-    else if(this.data.gradechoice==2)
+    else if(this.data.modechoice==2)
     {
       this.generateEquation2();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
-        equation:this.data.equa
+        equation:this.data.equation
       })
     }
-    else if (this.data.gradechoice == 3) {
+    else if (this.data.modechoice == 3){
       this.generateEquation3();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
         equation: this.data.equa
       })
     }
-    else if (this.data.gradechoice == 4) {
+    else if (this.data.modechoice == 4){
       this.generateEquation4();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
         equation: this.data.equa
       })
     }
-    else if (this.data.gradechoice == 5) {
+    else if (this.data.modechoice == 5) {
       this.generateEquation5();
       this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
         equation: this.data.equa
       })
     }
+    else if (this.data.modechoice == 6) {
+      this.generateEquation6();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        equation: this.data.equa
+      })
+    }
+    else if (this.data.modechoice == 7) {
+      this.generateEquation7();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        equation: this.data.equa
+      })
+    }
+    else if (this.data.modechoice == 8) {
+      this.generateEquation8();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        equation: this.data.equa
+      })
+    }
+    else if (this.data.modechoice == 9) {
+      this.generateEquation9();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        equation: this.data.equa
+      })
+    }
+    else if (this.data.modechoice == 10) {
+      this.generateEquation10();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        equation: this.data.equa
+      })
+    }
+    else if (this.data.modechoice == 11) {
+      this.generateEquation11();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        equation: this.data.equa
+      })
+    }
+  }
+  else if(this.data.playchoice==2){
+
+  }
+  else if(this.data.playchoice==3){
+    this.setData({
+      timename: 100,
+      numname: 10000,
+      equation: this.data.equation,
+    })
+    var op;
+    if(this.data.gradechoice==1){
+      op=this.randInt(1,3);
+    }
+    else if(this.data.gradechoice==2){
+      op=this.randInt(1,7);
+    }
+    else if(this.data.gradechoice==3){
+      op=this.randInt(1,11);
+    }
+    switch(op){
+      case 1:
+        this.generateEquation1();
+        break;
+      case 2:
+        this.generateEquation2();
+        break;
+      case 3:
+        this.generateEquation3();
+        break;
+      case 4:
+        this.generateEquation4();
+        break;
+      case 5:
+        this.generateEquation5();
+        break;
+      case 6:
+        this.generateEquation6();
+        break;
+      case 7:
+        this.generateEquation7();
+        break;
+      case 8:
+        this.generateEquation8();
+        break;
+      case 9:
+        this.generateEquation9();
+        break;
+      case 10:
+        this.generateEquation10();
+        break;
+      case 11:
+        this.generateEquation11();
+        break;
+    }
+    this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+        this.setData({
+          equation: this.data.equation,
+          numpercent: this.data.numpercent,
+        })
+  }
   },
 
 })

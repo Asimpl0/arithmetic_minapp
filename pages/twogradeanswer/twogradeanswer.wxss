@@ -1,1 +1,34 @@
 /* pages/twogradeanswer/twogradeanswer.wxss */
+.firstpng{
+  width: 500rpx;
+  margin-top: 100rpx;
+  padding-left: 20%;
+}
+
+.secondpng{
+  width: 500rpx;
+  margin-top: 100rpx;
+  padding-left: 20%;
+}
+
+.thirdpng{
+  width: 500rpx;
+  margin-top: 100rpx;
+  padding-left: 20%;
+}
+
+.fourthpng{
+  width: 500rpx;
+  margin-top: 100rpx;
+  padding-left: 20%;
+}
+
+.page {
+  display: block;
+  background-color: #FFFFCC;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

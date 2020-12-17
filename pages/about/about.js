@@ -83,7 +83,7 @@ Page({
     wx.showModal({
       cancelColor: 'cancelColor',
       title:"关于",
-      content:"本小程序为华中科技大学计算机学院软工小组作业",
+      content:"本小程序为2020华中科技大学计算机学院软工小组作业",
     })
   }
 })

@@ -1,6 +1,6 @@
 /* pages/calculate/calculate.wxss */
 .page {
-  display: block;
+  display: flex;
   background-color: #FFFFCC;
   min-height: 100%;
   width: 100%;

@@ -69,24 +69,7 @@ Page({
     app.globalData.nowAnswer = ans; 
     return 0; 
   }, 
-  //随机生成min-max闭区间内的一个整数 
-  randInt: function (min, max) { 
-    var randInt = Math.floor(Math.random() * (max - min + 1)) + min; 
-    return randInt; 
-  }, 
-  //若op为1，则返回num1+num2的结果，若op为2，则返回num1-num2的结果 
-  convertOp: function (op, num1, num2) { 
-    var ans; 
-    switch (op) { 
-      case 1: 
-        ans = num1 + num2; 
-        break; 
-      case 2: 
-        ans = num1 - num2; 
-        break; 
-    } 
-    return ans; 
-  }, 
+
  // 一年级模块2 
   generateEquation2: function () { 
     var equation; 
@@ -313,26 +296,22 @@ Suan7: function (num1, sign1, num2) {
     var operatornum = this.randInt(1, 2); //随机生成运算符数量
     if (operatornum == 1) {  //一个运算符
       op1 = this.randInt(1, 2); //随机生成运算符
-      console.log(op1);
       do {
-        num1 = this.randInt(0, 99);
-        num2 = this.randInt(0, 99);
+        num1 = this.randInt(10, 99);
+        num2 = this.randInt(10, 99);
         ans = this.convertOp(op1, num1, num2); //计算答案
-      } while (ans < 0 || ans > 100); //直到生成算式的结果满足要求
+      } while (ans < 0); //直到生成算式的结果满足要求
       equation = num1.toString() + operator[op1] + num2.toString() + "=";
     }
     else if (operatornum == 2) { //两个运算符
       op1 = this.randInt(1, 2);
       op2 = this.randInt(1, 2);
       do {
-        num1 = this.randInt(0, 99);
-        num2 = this.randInt(0, 99);
-        ans = this.convertOp(op1, num1, num2); //计算答案
-      } while (ans < 0 || ans > 297); //直到生成算式的结果满足要求
-      do{
-        num3 = this.randInt(0, 99);
-        ans = this.convertOp(op2, ans, num3);
-      }while(ans < 0 || ans > 297)
+        num1 = this.randInt(10, 99);
+        num2 = this.randInt(10, 99);
+        num3 = this.randInt(10, 99);
+        ans = this.convertOp2(num1,op1,num2,op2,num3);
+      }while((op1==2&&num2>num1)||ans < 0)
       equation = num1.toString() + operator[op1] + num2.toString() + operator[op2] + num3.toString() + "=";
     }
     app.globalData.nowEquation = equation;
@@ -352,24 +331,23 @@ Suan7: function (num1, sign1, num2) {
       op1 = this.randInt(1, 2); //随机生成运算符
       console.log(op1);
       do {
-        num1 = this.randInt(0, 999);
-        num2 = this.randInt(0, 999);
+        num1 = this.randInt(100, 999);
+        num2 = this.randInt(100, 999);
         ans = this.convertOp(op1, num1, num2); //计算答案
-      } while (ans < 0 || ans > 2997); //直到生成算式的结果满足要求
+      } while (ans < 0); //直到生成算式的结果满足要求
       equation = num1.toString() + operator[op1] + num2.toString() + "=";
     }
     else if (operatornum == 2) { //两个运算符
       op1 = this.randInt(1, 2);
       op2 = this.randInt(1, 2);
+      console.log(op1);
+      console.log(op2);
       do {
-        num1 = this.randInt(0, 999);
-        num2 = this.randInt(0, 999);
-        ans = this.convertOp(op1, num1, num2); //计算答案
-      } while (ans < 0 || ans > 2997); //直到生成算式的结果满足要求
-      do{
-        num3 = this.randInt(0, 999);
-        ans = this.convertOp(op2, ans, num3);
-      }while(ans < 0 || ans > 2997)
+        num1 = this.randInt(100, 999);
+        num2 = this.randInt(100, 999);
+        num3 = this.randInt(100, 999);
+        ans = this.convertOp2(num1,op1,num2,op2,num3);
+      }while((op1==2&&num2>num1)||ans < 0)
       equation = num1.toString() + operator[op1] + num2.toString() + operator[op2] + num3.toString() + "=";
     }
     app.globalData.nowEquation = equation;
@@ -387,7 +365,6 @@ Suan7: function (num1, sign1, num2) {
     var operatornum = this.randInt(1, 2); //随机生成运算符数量
     if (operatornum == 1) {  //一个运算符
       op1 = this.randInt(3, 4); //随机生成运算符
-      console.log(op1);
       do {
         num1 = this.randInt(10, 99);
         num2 = this.randInt(2, 9);
@@ -610,9 +587,8 @@ Suan7: function (num1, sign1, num2) {
           this.mode1();
         }
         else if(this.data.playchoice==2){  //强化模式的下一题逻辑
-
+          this.mode2();
         }
-
         else if(this.data.playchoice==3){
           this.mode3();
         }
@@ -648,13 +624,25 @@ Suan7: function (num1, sign1, num2) {
         lit.push(wrong);
         wx.setStorageSync('wrongArray', lit);
       }
-
+      //缓存错题模块
+      var litmod = wx.getStorageSync('wrongmodes');
+      if (!litmod) {
+        litmod = [];
+      }
+      if(!litmod.includes(app.globalData.nowmode)){
+        var  nowmd = app.globalData.nowmode;
+        if (app.globalData.nowmode >= 1 && app.globalData.nowmode <= 11) {
+          litmod.push(nowmd);
+          wx.setStorageSync('wrongmodes', litmod);
+        }
+      }  
+      var litmmmm = wx.getStorageSync('wrongmodes');
+      console.log(litmmmm);
       // 回答错误输入框变为？
       this.setData({
         InputAnswerNumber: '',
       })
       this.data.wrongnum = this.data.wrongnum + 1;
-      console.log(this.data.wrongnum)
       this.data.numpercent = ((this.data.correctnum + this.data.wrongnum) * 100 / this.data.numname).toFixed(1);
       // 题目做完结束
       if (this.data.correctnum + this.data.wrongnum == this.data.numname) {
@@ -688,11 +676,9 @@ Suan7: function (num1, sign1, num2) {
         if(this.data.playchoice==1){ //基础模式
           this.mode1();
         }
-
         else if(this.data.playchoice==2){  //强化模式的下一题逻辑
-
+          this.mode2();
         }
-
         else if(this.data.playchoice==3){
           this.mode3();
         }
@@ -764,9 +750,8 @@ Suan7: function (num1, sign1, num2) {
       this.generateEquation1();
     }
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
+
   mode1:function(){
     if(this.data.modechoice==1){
       this.generateEquation1();
@@ -804,8 +789,53 @@ Suan7: function (num1, sign1, num2) {
     }
   },
   mode2:function(){
-
-  },
+    var op;
+    var litmod = wx.getStorageSync('wrongmodes');
+    var len=litmod.length;
+    console.log(len);
+    var tm=this.randInt(1, len);
+    op = litmod[tm];
+    switch(op){
+      case 1:
+        this.generateEquation1();
+        break;
+      case 2:
+        this.generateEquation2();
+        break;
+      case 3:
+        this.generateEquation3();
+        break;
+      case 4:
+        this.generateEquation4();
+        break;
+      case 5:
+        this.generateEquation5();
+        break;
+      case 6:
+        this.generateEquation6();
+        break;
+      case 7:
+        this.generateEquation7();
+        break;
+      case 8:
+        this.generateEquation8();
+        break;
+      case 9:
+        this.generateEquation9();
+        break;
+      case 10:
+        this.generateEquation10();
+        break;
+      case 11:
+        this.generateEquation11();
+        break;
+    }
+    this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+    this.setData({
+      equation: this.data.equation,
+      numpercent: this.data.numpercent,
+    })
+},
   mode3:function(){
     var op;
     if(this.data.gradechoice==1){
@@ -875,7 +905,25 @@ Suan7: function (num1, sign1, num2) {
     })
   }
   else if(this.data.playchoice==2){
-
+    var litmod = wx.getStorageSync('wrongmodes');
+    var len=litmod.length;
+    if(len==0){
+      this.generateEquation1();
+      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+      this.setData({
+        timename: 2,
+        numname: 1,
+        equation:this.data.equation,
+      })
+    }
+    else{
+      this.setData({
+        timename: 10000,
+        numname: 100000,
+        equation:this.data.equation,
+      })
+    }
+    this.mode2();
   }
   else if(this.data.playchoice==3){
     this.setData({

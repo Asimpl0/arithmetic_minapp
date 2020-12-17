@@ -806,19 +806,13 @@ Suan7: function (num1, sign1, num2) {
     var op;
     var litmod = wx.getStorageSync('wrongmodes');
     var len=litmod.length;
-    console.log(len);
-    var tm=this.randInt(2, len+1);
-    console.log(tm);
-    console.log(len);
+    var tm=this.randInt(0, len-1);
     if(len==0) {
       op=this.randInt(1,11);
     }
     else {
       op = litmod[tm];
     }
-    console.log(op);
-    console.log(litmod[tm]);
-
     switch(op){
       case 1:
         this.generateEquation1();

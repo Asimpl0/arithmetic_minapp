@@ -6,7 +6,7 @@ App({
     nowEquation:'',
     nowAnswer:0,
     nowInput:0,
-    nowgrade:0, //所选的年级
+    nowgrade:1, //所选的年级
     nowplay:0,//1代表基础模式，2代表强化模式，3代表无尽模式
     nowmode:0//所选模式序号，为具体出题模式序号，从1-11
   },

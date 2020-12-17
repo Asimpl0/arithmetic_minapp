@@ -84,6 +84,10 @@ Page({
       sign:true,
       total:Number(Number(this.data.total) + 1),
   })
+  wx.showToast({
+    title: '签到成功！',
+    icon:"success"
+  })
   wx.setStorageSync('total', this.data.total);
   wx.setStorageSync('sign', this.data.sign);
   },

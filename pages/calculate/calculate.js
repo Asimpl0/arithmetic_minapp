@@ -24,6 +24,7 @@ Page({
     InputAnswerNumber: '',
     correctnum:0,//做对的题数
     wrongnum:0,//做错的题数
+    totalnum:0,
     numpercent:0,//做题进度百分比
     timepercent:0,//时间进度百分比
     correctrate:0,//正确率
@@ -31,7 +32,9 @@ Page({
     redonumber:0,//重做序号
     playchoice:0,
     modechoice:0,
-    gradechoice:0
+    gradechoice:0,
+    isWujin:false
+
   },
   // 计时器
   setTime() {
@@ -705,6 +708,7 @@ Suan7: function (num1, sign1, num2) {
       lastresult:!this.data.lastresult,
       correctnum:this.data.correctnum,
       correctrate:this.data.correctrate,
+      totalnum:this.data.correctnum+this.data.wrongnum
     })
     // 如果是重做错题，就将还未做的题加入到错题中
     if (app.globalData.nowgrade == 5) {
@@ -887,11 +891,18 @@ Suan7: function (num1, sign1, num2) {
     this.setTime()//计时器
     console.log(12);
      let that = this
+     app.globalData.nowgrade=wx.getStorageSync('grade');
      this.setData({
      modechoice:app.globalData.nowmode,
      gradechoice:app.globalData.nowgrade,
      playchoice:app.globalData.nowplay
      })
+     console.log(this.data.gradechoice);
+     if(this.data.playchoice==3){
+      this.setData({
+        isWujin:true
+      })
+    }
     //如果选择一年级则加载一年级的题目
     if(this.data.playchoice==1){
       this.setData({

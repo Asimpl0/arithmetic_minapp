@@ -604,6 +604,11 @@ Suan7: function (num1, sign1, num2) {
       }
     }
     else if (input != answer) {
+      if(this.data.playchoice==3){
+        this.inputAnswer_end();
+        console.log(1)
+        return;
+      }
       wx.showToast({
         icon:'none',
         duration: 1000,//显示时长
@@ -708,8 +713,13 @@ Suan7: function (num1, sign1, num2) {
       lastresult:!this.data.lastresult,
       correctnum:this.data.correctnum,
       correctrate:this.data.correctrate,
-      totalnum:this.data.correctnum+this.data.wrongnum
     })
+    if(this.data.correctnum>this.data.totalnum){
+      this.setData({
+        totalnum:this.data.correctnum
+      })
+    }
+    wx.setStorageSync('total', this.data.totalnum);
     // 如果是重做错题，就将还未做的题加入到错题中
     if (app.globalData.nowgrade == 5) {
       var lit = wx.getStorageSync('wrongArray');
@@ -842,14 +852,14 @@ Suan7: function (num1, sign1, num2) {
 },
   mode3:function(){
     var op;
-    if(this.data.gradechoice==1){
-      op=this.randInt(1,3);
+    if(this.data.gradechoice==3){
+      op=this.randInt(1,11);
     }
     else if(this.data.gradechoice==2){
       op=this.randInt(1,7);
     }
-    else if(this.data.gradechoice==3){
-      op=this.randInt(1,11);
+    else{
+      op=this.randInt(1,3);
     }
     switch(op){
       case 1:
@@ -892,10 +902,12 @@ Suan7: function (num1, sign1, num2) {
     console.log(12);
      let that = this
      app.globalData.nowgrade=wx.getStorageSync('grade');
+     this.data.totalnum=wx.getStorageSync('total');
      this.setData({
      modechoice:app.globalData.nowmode,
      gradechoice:app.globalData.nowgrade,
-     playchoice:app.globalData.nowplay
+     playchoice:app.globalData.nowplay,
+     totalnum:this.data.totalnum
      })
      console.log(this.data.gradechoice);
      if(this.data.playchoice==3){

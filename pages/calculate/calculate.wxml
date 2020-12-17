@@ -81,7 +81,7 @@
       <view class="costtime">
         <view class="style1">用时:\t{{time}}\t秒</view>
         <view wx:if="{{isWujin}}">
-          <view class="style2w">共答题数:\t {{totalnum}}</view>
+          <view class="style2w">史上最高:\t {{totalnum}}</view>
         </view>
         <block wx:else>
           <view class="style2">正确率:\t {{correctrate}}\t%</view>

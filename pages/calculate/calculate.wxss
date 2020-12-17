@@ -496,7 +496,7 @@
   align-items: center;
   font-size: 70rpx;
   margin-left: 5vw;
-  margin-top:10rpx;
+  margin-top:-50rpx;
 }
 
 /* 得分 */

@@ -8,7 +8,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    total:0,//总天数
+    totalday:0,//总天数
     sign:false,//是否可以签到
     month:0,
     year:0,
@@ -18,7 +18,7 @@ Page({
   },
   
   onLoad: function () {
-    this.data.tatal= wx.getStorageSync('total');
+    this.data.tatalday= wx.getStorageSync('totalday');
     this.data.sign=wx.getStorageSync('sign');
     this.data.lastmonth=wx.getStorageSync('month');
     this.data.lastday=wx.getStorageSync('day');
@@ -27,7 +27,7 @@ Page({
     app.globalData.nowgrade=wx.getStorageSync('grade');
 
     this.setData({
-      total:this.data.tatal,
+      totalday:this.data.tatalday,
       sign:this.data.sign,
       lastmonth:this.data.lastmonth,
       lastday:this.data.lastday,
@@ -82,13 +82,13 @@ Page({
   handlesign: function(e){
     this.setData({
       sign:true,
-      total:Number(Number(this.data.total) + 1),
+      totalday:Number(Number(this.data.totalday) + 1),
   })
   wx.showToast({
     title: '签到成功！',
     icon:"success"
   })
-  wx.setStorageSync('total', this.data.total);
+  wx.setStorageSync('totalday', this.data.totalday);
   wx.setStorageSync('sign', this.data.sign);
   },
 

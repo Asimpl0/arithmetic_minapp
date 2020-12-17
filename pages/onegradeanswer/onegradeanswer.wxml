@@ -1,12 +1,14 @@
 <!--pages/onegradeanswer/onegradeanswer.wxml-->
 <view class="page">
-  <navigator hover-class="none" bindtap="mode1select" url="../calculate/calculate">
-    <image class="firstpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/377dc149240fde35.png"/>
+  <view class="one">
+    <navigator hover-class="none" bindtap="mode1select" url="../calculate/calculate">
+    <image class="firstpng" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/17/LcrkZWNYy6UTE1f.png"/>
   </navigator>
   <navigator hover-class="none" bindtap="mode2select" url="../calculate/calculate">
-    <image class="secondpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/1dba5eb75d821605.png"/>
+    <image class="secondpng" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/17/UQw6fq3agBDINpC.png"/>
   </navigator>
   <navigator hover-class="none" bindtap="mode3select" url="../calculate/calculate">
-    <image class="thirdpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/b8c122d50b8ffad1.png"/>
+    <image class="thirdpng" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/17/X6r5zfOb8comyEV.png"/>
   </navigator>
+  </view>
 </view>

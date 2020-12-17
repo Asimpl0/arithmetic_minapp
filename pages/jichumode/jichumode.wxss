@@ -1,4 +1,27 @@
-/* pages/jichumode/jichumode.wxss */
+
+.firstpng{
+  width: 500rpx;
+  margin-top: 150rpx;
+}
+
+.secondpng{
+  width: 500rpx;
+  margin-top: 60rpx;
+}
+
+.thirdpng{
+  width: 500rpx;
+  margin-top: 60rpx;
+}
+
+
+
+
+.grade{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .page {
   display: block;
@@ -9,28 +32,6 @@
   left: 0;
   top: 0;
 }
-
-.firstpng{
-  width: 415rpx;
-  height: 700rpx;
-  margin-top: 60rpx;
-  padding-left: 24%;
-}
-
-.secondpng{
-  width: 415rpx;
-  height: 700rpx;
-  margin-top: 60rpx;
-  padding-left: 24%;
-}
-
-.thirdpng{
-  width: 415rpx;
-  height: 700rpx;
-  margin-top: 60rpx;
-  padding-left: 24%;
-}
-
 .fourthpng{
   width: 700rpx;
   height: 700rpx;

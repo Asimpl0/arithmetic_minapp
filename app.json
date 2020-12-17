@@ -17,7 +17,6 @@
     "navigationBarBackgroundColor": "#FFFFCC",
     "navigationBarTitleText": "恐龙口算",
     "navigationBarTextStyle":"black",
-    "enablePullDownRefresh": true,
     "backgroundTextStyle": "dark"
   },
   "tabBar": {

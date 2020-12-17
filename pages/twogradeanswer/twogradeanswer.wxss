@@ -1,26 +1,29 @@
-/* pages/twogradeanswer/twogradeanswer.wxss */
+/* pages/onegradeanswer/onegradeanswer.wxss */
 .firstpng{
-  width: 500rpx;
-  margin-top: 100rpx;
-  padding-left: 20%;
+  width: 600rpx;
+  margin-top: 150rpx;
 }
 
 .secondpng{
-  width: 500rpx;
-  margin-top: 100rpx;
-  padding-left: 20%;
+  width: 600rpx;
+  margin-top: 60rpx;
 }
 
 .thirdpng{
-  width: 500rpx;
-  margin-top: 100rpx;
-  padding-left: 20%;
+  width: 600rpx;
+  margin-top: 60rpx;
 }
 
+
 .fourthpng{
-  width: 500rpx;
-  margin-top: 100rpx;
-  padding-left: 20%;
+  width: 600rpx;
+  margin-top: 60rpx;
+}
+
+.two{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .page {

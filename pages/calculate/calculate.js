@@ -33,8 +33,8 @@ Page({
     playchoice:0,
     modechoice:0,
     gradechoice:0,
-    isWujin:false
-
+    isWujin:false,
+    equa:""
   },
   // 计时器
   setTime() {
@@ -42,7 +42,7 @@ Page({
     let myTime = setInterval(function () {
       that.setData({
         time: that.data.time + 1,
-        timepercent:((that.data.time*100)/(that.data.timename*60)).toFixed(1)
+        timepercent:((that.data.time*100)/(that.data.timename*60)).toFixed(0)
       })
       if (that.data.time > that.data.timename * 60||that.data.ending==true) {
         clearInterval(myTime)
@@ -115,7 +115,7 @@ Page({
     app.globalData.nowEquation = equation; 
     app.globalData.nowAnswer = ans; 
     return 0; 
-  }, 
+    },
 // 二年级
 //100以内的加减
 
@@ -552,7 +552,7 @@ Suan7: function (num1, sign1, num2) {
         InputAnswerNumber: '',
       })
       this.data.correctnum=this.data.correctnum+1;
-      this.data.numpercent=((this.data.correctnum+this.data.wrongnum)*100/this.data.numname).toFixed(1);
+      this.data.numpercent=((this.data.correctnum+this.data.wrongnum)*100/this.data.numname).toFixed(0);
       this.data.correctrate = ((this.data.correctnum)*100/ this.data.numname).toFixed(1);
       // 如果题目做完了就答题结束
 
@@ -628,10 +628,10 @@ Suan7: function (num1, sign1, num2) {
         this.setData({
           wrongnow: this.data.wrongnow
         })
-      if (app.globalData.nowgrade >= 1 && app.globalData.nowgrade <= 4) {
+
         lit.push(wrong);
         wx.setStorageSync('wrongArray', lit);
-      }
+
       //缓存错题模块
       var litmod = wx.getStorageSync('wrongmodes');
       if (!litmod) {
@@ -687,7 +687,7 @@ Suan7: function (num1, sign1, num2) {
         else if(this.data.playchoice==2){  //强化模式的下一题逻辑
           this.mode2();
         }
-        else if(this.data.playchoice==3){
+        else {
           this.mode3();
         }
         this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
@@ -808,7 +808,14 @@ Suan7: function (num1, sign1, num2) {
     var len=litmod.length;
     console.log(len);
     var tm=this.randInt(1, len);
-    op = litmod[tm];
+    if(len==0) {
+      op=this.randInt(1,11);   
+    }
+    else {
+      op = litmod[tm];
+      console.log(op);
+    }
+    console.log(op);
     switch(op){
       case 1:
         this.generateEquation1();
@@ -844,11 +851,6 @@ Suan7: function (num1, sign1, num2) {
         this.generateEquation11();
         break;
     }
-    this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
-    this.setData({
-      equation: this.data.equation,
-      numpercent: this.data.numpercent,
-    })
 },
   mode3:function(){
     var op;
@@ -931,22 +933,23 @@ Suan7: function (num1, sign1, num2) {
     var litmod = wx.getStorageSync('wrongmodes');
     var len=litmod.length;
     if(len==0){
-      this.generateEquation1();
-      this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
       this.setData({
         timename: 2,
-        numname: 1,
-        equation:this.data.equation,
+        numname: 20,
       })
     }
     else{
       this.setData({
-        timename: 10000,
-        numname: 100000,
-        equation:this.data.equation,
+        timename: 2,
+        numname: 20,
       })
     }
     this.mode2();
+    this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
+    this.setData({
+      equation: this.data.equation,
+      numpercent: this.data.numpercent,
+    })
   }
   else if(this.data.playchoice==3){
     this.setData({

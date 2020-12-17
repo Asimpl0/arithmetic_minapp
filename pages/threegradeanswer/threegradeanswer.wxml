@@ -1,22 +1,24 @@
 <!--pages/threegradeanswer/threegradeanswer.wxml-->
 <view class="page">
   
-
+<view class="three">
   <navigator hover-class="none" bindtap="mode8select" url="../calculate/calculate">
-    <image class="firstpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/d6991ecb231d0046.png"/> 
+    <image class="firstpng" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/17/cQu9fHCK7sN3jBL.png"/> 
   </navigator>
   <navigator hover-class="none" bindtap="mode9select" url="../calculate/calculate">
-    <image class="secondpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/e54e46330c3b91bc.png"/>
+    <image class="secondpng" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/17/Ds1bLfAapmK4tUJ.png"/>
   </navigator>
 
   <navigator hover-class="none" bindtap="mode10select" url="../calculate/calculate">
-    <image class="fourthpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/5852bae379dd0341.png"/>
+    <image class="fourthpng" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/17/CengM6xbWmTKrS4.png"/>
     
   </navigator>
   <navigator hover-class="none" bindtap="mode11select" url="../calculate/calculate">
-    <image class="thirdpng" mode="widthFix" lazy-load src="https://ftp.bmp.ovh/imgs/2020/12/b47ad8cc8d3d6af6.png"/>
+    <image class="thirdpng" mode="widthFix" lazy-load src="https://i.loli.net/2020/12/17/XpR9ySt6lfW5iuw.png"/>
   </navigator>
 
+</view>
+  
 </view>  
 
 

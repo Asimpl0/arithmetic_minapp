@@ -532,6 +532,7 @@
   align-items: center;
   font-size: 70rpx;
   margin-left: 5vw;
+  margin-top: -45rpx;
 }
 /* 下面的详细内容 */
 .details{

@@ -64,15 +64,28 @@
   </view>
   <!-- 遮罩层b4显示得分结果 -->
   <view class="b4" style="background-color:{{pageBackgroundColor}}" wx:if="{{lastresult}}">
-    <view class="resmark">
+    <view class="resmarkwujin" wx:if="{{isWujin}}">
+      <view class="image5w"></view>
+      <view class="markw">答对题数 :</view>
+      <view class="marksw">{{correctnum}} </view>
+    </view>
+    <block wx:else>
+      
+    <view  class="resmark">
       <view class="image5"></view>
-      <view class="mark">得分:</view>
+      <view class="mark">得分 :</view>
       <view class="marks">{{correctnum}} / {{numname}}</view>
     </view>
+    </block>
     <view class="details">
       <view class="costtime">
-        <view class="style1">用时:\t{{time}}秒</view>
-        <view class="style2">正确率:\t {{correctrate}}%</view>
+        <view class="style1">用时:\t{{time}}\t秒</view>
+        <view wx:if="{{isWujin}}">
+          <view class="style2w">共答题数:\t {{totalnum}}</view>
+        </view>
+        <block wx:else>
+          <view class="style2">正确率:\t {{correctrate}}\t%</view>
+        </block>
       </view>
       
       <view class="style4">本次错题</view>

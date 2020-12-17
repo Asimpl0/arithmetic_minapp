@@ -88,7 +88,7 @@
 
 .equstyle{
   
-
+  width: 400rpx;
   margin-left: 60rpx;
 }
 
@@ -464,7 +464,40 @@
  
 }
 
+.resmarkwujin{
+  display: flex;
+  flex-direction: row;  /* 让几个view容器横向排列 */
+  height:24vh;
+}
 
+
+.image5w{
+  display: flex;
+  width:120rpx;
+  height: 120rpx;
+  margin-top: 80rpx;
+  margin-left: 80rpx;
+  background-size: 100% 100%;
+  background-image: url("https://i.loli.net/2020/12/16/VCuADw74JaUTbt9.png")
+}
+.markw{
+  display: flex;
+  text-align: left;
+  justify-content:left;
+  align-items: left;
+  font-size: 70rpx;
+  margin-left: 20rpx;
+  margin-top: 100rpx;
+}
+.marksw{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 70rpx;
+  margin-left: 5vw;
+  margin-top:10rpx;
+}
 
 /* 得分 */
 .resmark{
@@ -534,6 +567,12 @@
   margin-bottom:1vh;
 }
 
+.style2w{
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  margin-bottom:1vh;
+}
+
 .style4{
   margin-top: 60rpx;
   display: flex;
@@ -544,7 +583,7 @@
   margin-bottom:1vh;
 }
 
-.image6{
+/* .image6{
   position: absolute;
   display: flex;
   margin-left: 150rpx;
@@ -554,7 +593,7 @@
   left: 40vw;
   background-size: 100% 100%;
   background-image: url("https://i.loli.net/2020/12/16/7E5ci8L6yZlkgqO.png")
-}
+} */
 .wrongquestions{
   display: flex;
   flex-direction: column;
@@ -574,7 +613,7 @@
     margin-bottom:2.5vh;
   display: flex;
   flex-direction: row;
-  border-radius: 40rpx;
+  border-radius: 25rpx;
 }
 
 .wrongEquation{

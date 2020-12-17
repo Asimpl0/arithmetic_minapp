@@ -247,18 +247,18 @@ generateEquation7: function () {
   var num;
   var i;
   var answer;
-  var Sign = ["*", "/"];
+  var Sign = ["×","÷"];
   var equation = new Array();
   for (i = 0; i < Sign.length; i++)
     equation[i] = "0";
   var num11 = this.randomRange(0, 2);
   var sign1 = Sign[num11];
   do {
-    if(sign1 == "*"){
+    if(sign1 == "×"){
       var num1 = this.randomRange(1, 10);
       var num2 = this.randomRange(1, 10);
     }
-    else if(sign1 == "/"){
+    else if(sign1 == "÷"){
       var num3 = this.randomRange(1, 10);
       var num2 = this.randomRange(2, 10);
       num1 = num2 * num3;
@@ -284,8 +284,8 @@ randomRange: function (min, max) {
 },
 Suan7: function (num1, sign1, num2) {
   var ans;
-  if (sign1 == "*") ans = num1 * num2;
-  else if (sign1 == "/") ans = num1 / num2;
+  if (sign1 == "×") ans = num1 * num2;
+  else if (sign1 == "÷") ans = num1 / num2;
   return ans;
 },
 // 三年级部分
@@ -364,7 +364,7 @@ Suan7: function (num1, sign1, num2) {
     var equation;
     var ans;
     var op1, op2, num1, num2, num3;
-    var operator = new Array(".", "+", "-","*","/");
+    var operator = new Array(".", "+", "-","×","÷");
     var operatornum = this.randInt(1, 2); //随机生成运算符数量
     if (operatornum == 1) {  //一个运算符
       op1 = this.randInt(3, 4); //随机生成运算符
@@ -405,7 +405,7 @@ Suan7: function (num1, sign1, num2) {
     var equation;
     var ans;
     var op1, op2, num1, num2, num3;
-    var operator = new Array(".", "+", "-","*","/");
+    var operator = new Array(".", "+", "-","×","÷");
     var operatornum = this.randInt(1, 2); //随机生成运算符数量
     if (operatornum == 1) {  //一个运算符
       op1 = this.randInt(3, 4); //随机生成运算符
@@ -807,15 +807,18 @@ Suan7: function (num1, sign1, num2) {
     var litmod = wx.getStorageSync('wrongmodes');
     var len=litmod.length;
     console.log(len);
-    var tm=this.randInt(1, len);
+    var tm=this.randInt(2, len+1);
+    console.log(tm);
+    console.log(len);
     if(len==0) {
-      op=this.randInt(1,11);   
+      op=this.randInt(1,11);
     }
     else {
       op = litmod[tm];
-      console.log(op);
     }
     console.log(op);
+    console.log(litmod[tm]);
+
     switch(op){
       case 1:
         this.generateEquation1();
@@ -901,7 +904,6 @@ Suan7: function (num1, sign1, num2) {
   },
   onLoad: function (options) {
     this.setTime()//计时器
-    console.log(12);
      let that = this
      app.globalData.nowgrade=wx.getStorageSync('grade');
      this.data.totalnum=wx.getStorageSync('total');
@@ -911,7 +913,6 @@ Suan7: function (num1, sign1, num2) {
      playchoice:app.globalData.nowplay,
      totalnum:this.data.totalnum
      })
-     console.log(this.data.gradechoice);
      if(this.data.playchoice==3){
       this.setData({
         isWujin:true
@@ -920,8 +921,8 @@ Suan7: function (num1, sign1, num2) {
     //如果选择一年级则加载一年级的题目
     if(this.data.playchoice==1){
       this.setData({
-        timename: 2,
-        numname: 20,
+        timename: 4,
+        numname: 10,
       })
       this.mode1();
     this.data.equation = app.globalData.nowEquation; //全局变量的equation赋值给data里的equation
@@ -934,14 +935,14 @@ Suan7: function (num1, sign1, num2) {
     var len=litmod.length;
     if(len==0){
       this.setData({
-        timename: 2,
-        numname: 20,
+        timename: 4,
+        numname: 10,
       })
     }
     else{
       this.setData({
-        timename: 2,
-        numname: 20,
+        timename: 4,
+        numname: 10,
       })
     }
     this.mode2();
